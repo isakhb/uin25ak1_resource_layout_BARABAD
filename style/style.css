@@ -11,21 +11,36 @@
 
 body {
     background-color: var(--lightblue);
+    font-size: 1rem;
+    font-family: var(--montserrat);
+    width: 100%;
 }
 
 header {
-    font-family: var(--montserrat);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav, main {
+    margin: 0 100px 0 100px;
 }
 
 nav {
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+    width: 100%;
+
     button {
         background-color: var(--darkblue);
         color: var(--white);
         border-style: none;
-        display: inline;
-        padding: 1rem 1.5rem 1rem 1.5rem;
+        padding: 25px 50px 25px 50px;
         font-weight: 750;
+        font-size: 1rem;
     }
     button:hover {
         background-color: var(--white);
@@ -34,13 +49,10 @@ nav {
 }
 
 main {
-    font-family: var(--montserrat);
     background-color: var(--white);
-
-    margin-left: 3rem;
-    margin-right: 3rem;
-
-    h2 {
+    padding: 50px;
+    
+    h1 {
         color: var(--darkblue);
     }
 }
