@@ -19,13 +19,17 @@ header {
 
 nav {
     margin: 0;
-    li {
+    button {
         background-color: var(--darkblue);
         color: var(--white);
-        list-style-type: none;
+        border-style: none;
         display: inline;
         padding: 1rem 1.5rem 1rem 1.5rem;
         font-weight: 750;
+    }
+    button:hover {
+        background-color: var(--white);
+        color: var(--darkblue);
     }
 }
 
