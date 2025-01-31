@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <script src="ressurser.js"></script>
-    <script src="arbeidskrav1.js"></script>
+    <!--<script src="arbeidskrav1.js"></script>-->
     <title>Arbeidskrav 1</title>
 </head>
 <body>
@@ -15,19 +15,40 @@
             <button id="btnCSS">CSS</button>
             <button id="btnJS">JavaScript</button>
             <button id="btnReact">React</button>
-            <button id="btnSHCMS">Sanity og headless CMS</button>
+            <button id="btnSHCMS">Sanity and headless CMS</button>
         </nav>
     </header>
 
     <main>
         <section id="IDresources">
-            <!--<h1>Overskrift</h1>
-            <p>abcdef</p>
-            <ul>
-                <li>ghi</li>
-                <li>jkl</li>
-            </ul>-->
         </section>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const resourceContainer = document.getElementById("IDresources");
+            const buttons = document.querySelectorAll("button");
+
+            function printResources(category) {
+                const filteredResources = resources.filter(res => res.category === category);
+                resourceContainer.innerHTML = filteredResources.map(res =>
+                    `<h1>${res.category}</h1>
+                    <p>${res.text}</p>
+                    <ul>
+                        ${res.sources.map(src =>
+                            `<li><a href="${src.url}">${src.title}</a></li>`
+                        ).join('')}
+                    </ul>`
+                ).join('');
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    printResources(button.innerText);
+                });
+            });
+
+            printResources("HTML");
+        });
+    </script>
 </body>
 </html>
